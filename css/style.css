@@ -1,106 +1,121 @@
-.menu{
+.menu {
     display: inline-block;
     background: silver;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-left: 10px;
     width: 100%;
     height: 60px;
     align-items: flex-end;
 }
 
-.loginBtn{
+.loginBtn {
     margin-left: 10px;
     margin-right: 10px;
     font-size: 20px;
     text-decoration: none;
     color: black;
-    
+
+    padding-top: 10px;
     text-align: center;
     
+
     position: absolute;
-    width: 90px;
-    height: 40px;
-    
+    width: 120px;
+    height: 50px;
+
     background: #FFFFFF;
     mix-blend-mode: normal;
-    border: 1px solid rgba(0, 0, 0, 0.52);
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 27px;
-    
-    }
-.search{
+    /* border: 1px solid rgba(0, 0, 0, 0.52); */
+    box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+}
+
+.loginBtn img {
+    height: 25px;
+}
+
+
+.search {
     display: inline;
 }
 
-.search input[type=search]{
+.search input[type=search] {
     height: 50px;
     width: 75%;
 }
-.search button{
+
+.search button {
     margin-left: -4px;
     height: 50px;
-}
-.searchbtn{
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 40px;
     border-radius: 10px;
 }
-.login input[type="login"]{
+
+
+
+
+.login input[type="login"] {
     /* Rectangle 1 */
-width:250px;
-position: relative;
-background: none;
-border-radius: 91px;
+    width: 250px;
+    position: relative;
+    background: none;
+    border-radius: 91px;
 }
 
-.login input[type="password"]{
+.login input[type="password"] {
     /* Rectangle 1 */
-width:250px;
-position: relative;
-background: none;
-border-radius: 91px;
+    width: 250px;
+    position: relative;
+    background: none;
+    border-radius: 91px;
 
 }
-.login input[type="email"]{
+
+.login input[type="email"] {
 
     /* Rectangle 1 */
     display: block;
-position: relative;
-width:515px;
-background: none;
-border-radius: 91px;
+    position: relative;
+    width: 515px;
+    background: none;
+    border-radius: 91px;
 
 }
 
-.login input[type="submit"]{
+.login input[type="submit"] {
     /* Rectangle 1 */
-    
-position: relative;
-height: 40px;
-background: none;
-border-radius: 91px;
+
+    position: relative;
+    height: 40px;
+    background: none;
+    border-radius: 91px;
 
 }
 
-.suggestion{
+.suggestion {
     top: 75%;
     margin: 10px 10px 10px 10px;
     margin-left: 45%;
     padding: 7px 7px 7px 7px;
     position: absolute;
     justify-content: end;
-    display:flexbox;
+    display: flexbox;
     background-color: rgb(36, 36, 36);
 }
-.suggestion h1{
+
+.suggestion h1 {
     font-size: large;
     color: white;
 }
-.suggestion p{
+
+.suggestion p {
     font-size: medium;
-    color: silver; 
+    color: silver;
 }
-.suggestion a{
+
+.suggestion a {
     font-size: 40px;
     align-content: end;
     color: white;
@@ -109,32 +124,34 @@ border-radius: 91px;
 
 
 
-.loginBtn img{
-    height: 25px;
-}
 
-.video{
+.video {
     display: inline-block;
     margin-left: 20px;
-    background-color:none;
+    background-color: none;
     vertical-align: top;
 }
 
-.thumbnail{
+.thumbnail {
     display: block;
-    height: 250px;
+    /* Idk something to cover when its too big */
+    object-fit: contain;
+    width: 350px;
+    height: 196px;
     border-radius: 20px;
 }
-.ytIcon{
+
+.ytIcon {
     display: inline;
     height: 35px;
 }
-p{
+
+p {
     font-size: large;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.nav-menu{
+.nav-menu {
     display: inline;
     background-color: rgb(65, 65, 65);
     height: 1000px;
