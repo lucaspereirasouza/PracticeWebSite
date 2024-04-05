@@ -8,7 +8,9 @@
     width: 100%;
     height: 60px;
 }
-
+.youtubeicon{
+    display: inline-block;
+}
 .loginBtn {
 
     margin-left: 10px;
