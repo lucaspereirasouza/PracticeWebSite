@@ -16,23 +16,22 @@
         <div style="background-color: silver; flex: 2;">flex 2</div>
     </div>
 
-    <div style="display: flex;"">
+    <div style="display: flex;">
     <div style="flex: 1;"></div>
-    <div style="flex: 1;">
-        <div style="width:640px;height:480px;max-width:100%">
-            <div id="game"></div>
-          </div>
-    <script type="text/javascript">
-        EJS_player = '#game';
-        EJS_gameUrl = 'https://www.emulatorjs.com/roms/a2600/wall_jump_ninja_20141129.bin'; // Url to Game rom
-        EJS_core = 'atari2600';
-    </script>
-    <script src="https://www.emulatorjs.com/loader.js"></script>
-        
 
+    <div style="flex: 1;">
+        <div style="width:800px;height:480px;max-width:100%">
+            <div id="game"></div>
+        </div>
+        <script type="text/javascript">
+            EJS_player = '#game';
+            EJS_gameUrl = 'https://www.emulatorjs.com/roms/a2600/wall_jump_ninja_20141129.bin'; // Url to Game rom
+            EJS_core = 'atari2600';
+        </script>
+        <script src="https://www.emulatorjs.com/loader.js"></script>
     </div>
     <div style="flex: 1;"></div>
-</div>
+    </div>
 </body>
 
 </html>
