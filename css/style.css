@@ -2,7 +2,7 @@
     display: inline-block;
     background: rgb(231, 231, 231);
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-bottom: 10px;
+   
     padding-top: 5px;
     padding-left: 10px;
     width: 100%;
@@ -91,25 +91,41 @@ p {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-
+.home{
+    display: grid;
+    grid-template-columns: 1fr 14fr;
+}
+.home-tab{
+    background-color: silver;
+    display: block;
+}
+.home-tab-button{
+    width: 100%;
+    height: 10%;
+}
+.channels-tab-button{
+    width: 100%;
+    height: 10%;
+}
 
 /* Home grid */
-.home{
+.videos{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 16px;
     row-gap: 16px;
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 10px;
 }
-
 
 .thumbnail{
-    background-color: silver;
-    height: 100%;
+    background-color: rgb(153, 153, 153);
+    height: 250px;
 }
-.thumbnail img{
+.thumbnail img{ 
     background-size: contain;
+    height: 100%;
     width: 100%;
 }
 .channel-img img{
