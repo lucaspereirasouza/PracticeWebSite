@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlexBox</title>
 </head>
-<body>
+
+<body style="background-color: black;">
     <div style="display: flex;
     flex-direction: row;">
-        <div style="background-color: rosybrown;">colum</div>
-        <div style="background-color: blueviolet;">colum</div>
+        <div style="background-color: rosybrown;"> ordinary colum</div>
+        <div style="background-color: blueviolet;
+        flex: 1;">flex 1</div>
+        <div style="background-color: silver; flex: 2;">flex 2</div>
     </div>
+
+    <div style="display: flex;"">
+    <div style="flex: 1;"></div>
+    <div style="flex: 1;">
+        <div style="width:640px;height:480px;max-width:100%">
+            <div id="game"></div>
+          </div>
+    <script type="text/javascript">
+        EJS_player = '#game';
+        EJS_gameUrl = 'https://www.emulatorjs.com/roms/a2600/wall_jump_ninja_20141129.bin'; // Url to Game rom
+        EJS_core = 'atari2600';
+    </script>
+    <script src="https://www.emulatorjs.com/loader.js"></script>
+        
+
+    </div>
+    <div style="flex: 1;"></div>
+</div>
 </body>
+
 </html>
