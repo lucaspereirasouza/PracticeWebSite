@@ -32,6 +32,12 @@
     box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
 
+    transition: 0.5s;
+}
+
+.loginBtn:hover{
+    border-radius: 20px;
+    background: silver;
 }
 
 .loginBtn img {
@@ -48,7 +54,17 @@
     width: 75%;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    transition: 0.5;
 }
+
+.search-btn{
+    transition: 0.5s;
+}
+
+.search-btn:hover{
+    background-color: silver;
+}
+
 
 .search button {
     margin-left: -4px;
