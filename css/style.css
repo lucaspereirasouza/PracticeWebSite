@@ -1,6 +1,6 @@
 .menu {
     display: inline-block;
-    background: silver;
+    background: rgb(231, 231, 231);
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 10px;
     padding-top: 5px;
@@ -9,21 +9,8 @@
     height: 60px;
 }
 
-.videos {
-    display: inline-block;
-    background-color: none;
-    vertical-align: top;
-}
-
-.tab {
-    display: inline-block;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid black;
-    height: 1000px;
-    width: 90px;
-}
-
 .loginBtn {
+
     margin-left: 10px;
     margin-right: 10px;
     font-size: 20px;
@@ -32,13 +19,12 @@
 
     padding-top: 10px;
     text-align: center;
-    
 
     position: absolute;
     width: 120px;
     height: 50px;
 
-    background: #FFFFFF;
+    background: #ffffff;
     mix-blend-mode: normal;
     /* border: 1px solid rgba(0, 0, 0, 0.52); */
     box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.25);
@@ -58,12 +44,16 @@
 .search input[type=search] {
     height: 50px;
     width: 75%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .search button {
     margin-left: -4px;
     height: 50px;
-    border-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: #FFFFFF;
 }
 
 .suggestion {
@@ -96,27 +86,6 @@
 }
 
 
-
-
-
-.video{
-    display: inline-block;
-    margin-left: 30px;
-}
-.thumbnail {
-    display: block;
-    /* Idk something to cover when its too big */
-    object-fit: contain;
-    width: 350px;
-    height: 196px;
-    border-radius: 20px;
-}
-
-.ytIcon {
-    display: inline;
-    height: 35px;
-}
-
 p {
     font-size: large;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -124,41 +93,37 @@ p {
 
 
 
-
-.login input[type="login"] {
-    /* Rectangle 1 */
-    width: 250px;
-    position: relative;
-    background: none;
-    border-radius: 91px;
+/* Home grid */
+.home{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.login input[type="password"] {
-    /* Rectangle 1 */
-    width: 250px;
-    position: relative;
-    background: none;
-    border-radius: 91px;
-
+.video{
+    display: grid;
+    grid-template-rows: 250px 1fr;
+}
+.thumbnail{
+    background-color: rgb(128, 0, 0);
+    height: 100%;
+}
+.channel-img img{
+    border-radius: 20px;
+}
+.title{
+    display:grid;
+    grid-template-columns: 50px 1fr;
+}
+.title img{
+    height: 50px;
+    width: 50px;
 }
 
-.login input[type="email"] {
-
-    /* Rectangle 1 */
-    display: block;
-    position: relative;
-    width: 515px;
-    background: none;
-    border-radius: 91px;
-
-}
-
-.login input[type="submit"] {
-    /* Rectangle 1 */
-
-    position: relative;
-    height: 40px;
-    background: none;
-    border-radius: 91px;
-
+.views,.time{
+    font-family: "Roboto", sans-serif;
+    font-size: small;
 }
