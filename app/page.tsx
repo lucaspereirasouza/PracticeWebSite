@@ -1,95 +1,128 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import "./components/css/index.css";
+import "./components/css/style.css";
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+import VideoCard from "./components/videoCard";
+import ErrorNotification from "./components/errorNotification";
+import React from "react";
+import axios from "axios";
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+
+
+type videoType = {
+  id?: any;
+  snippet?: {
+    thumbnails: { medium: { url: any; }; };
+    title: any; publishedAt: string | number | Date;
+  };
+  statistics?: { viewCount: any; };
+}
+
+
+export default async function Home() {
+
+  let videos:any = [];
+  try {
+    const response = await axios.get(
+
+      process.env.YT_API_URL + "/v3/videos"!,
+      {
+        params: {
+
+          part: "snippet,statistics",
+          chart: "mostPopular",
+          maxResults: 9,
+          regionCode: "US",
+          key: process.env.YT_API_KEY
+        }
+      })
+    
+    videos = response.data.items || [];
+
+
+
+    return (
+      <>
+        <div className="menu">
+          <div className="youtubeicon"></div>
+          <div className="search">
+            <input type="text" className="search" />
+            <button className="search-btn" type="submit">
+              search
+            </button>
+          </div>
+          <a className="loginBtn" href="pages/login.html">
             <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/src/Image/user-interface.png"
+              height={50}
+              width={50}
+              alt="Login"
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
+            Login
           </a>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+        <div className="home">
+          <div className="home-tab">
+            <button className="home-tab-button">Home</button>
+            <button className="channels-tab-button">Channel</button>
+          </div>
+
+          <div className="videos">
+            <div className="video">
+              <div className="thumbnail"></div>
+              <div className="title">
+                <div className="channel-Image">
+                  <Image
+                    src="/src/Image/thumbnailYoutube.png"
+                    width={250}
+                    height={250}
+                    alt="Thumbnail"
+                  />
+                </div>
+                <div className="title-text">
+                  <div className="title-name">Soundgarden - black hole sun</div>
+                  <div className="views">10 Visualizações</div>
+                  <div className="time">10 anos atrás</div>
+                </div>
+              </div>
+            </div>
+
+            {videos.map((video): any => {
+
+              <VideoCard
+
+                thumbnail={video.snippet.thumbnails.medium.url}
+                title={video.snippet.title}
+                views={`${video.statistics.viewCount} Visualizações`}
+                time={new Date(video.snippet.publishedAt).toLocaleDateString()}
+              />
+            })}
+
+          </div>
+
+          <div className="suggestion">
+            <h1>Install Youtobas Music</h1>
+            <p className="SubText">
+              Add Youtobas Music to your desktop quick and easy access
+            </p>
+            <button className="exit-suggestion-btn">
+              <Image
+                src="/src/Image/icons/cross.png"
+                alt="Close"
+                width={20}
+                height={20}
+              />
+            </button>
+          </div>
+        </div>
+      </>
+    );
+  } catch (error) {
+    
+    videos = [];
+
+    return(
+      <ErrorNotification message={"Videos não encontrados, tente novamente"}>teste</ErrorNotification>
+    )
+  }
 }
