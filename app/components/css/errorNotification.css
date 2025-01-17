@@ -1,0 +1,33 @@
+.error-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 0, 0, 0.9);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+  }
+  
+  .error-notification p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .error-notification button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .error-notification button:hover {
+    color: #ddd;
+  }
+  
