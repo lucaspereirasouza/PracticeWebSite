@@ -1,0 +1,35 @@
+.suggestion {
+    top: 85%;
+    margin: 10px 10px 10px 10px;
+    padding: 8px 8px 8px 8px;
+    position: absolute;
+    display: flexbox;
+    background-color: rgb(247, 247, 247);
+    border: rgb(56, 56, 56) solid 1px;
+    border-radius: 3px;
+}
+
+.suggestion h1 {
+    font-size: large;
+    color: rgb(0, 0, 0);
+}
+
+.suggestion p {
+    font-size: medium;
+    color: rgb(116, 116, 116);
+}
+
+.exit-suggestion-btn{
+    background-color: #fff;
+    border: 0;
+    border-radius: 10px;
+    margin-left: 90%;
+    width: 50px;
+    height: 50px;
+    transition: 0.5s;
+}
+.exit-suggestion-btn:hover{
+    border-radius: 20px;
+    
+    background-color: silver;
+}
